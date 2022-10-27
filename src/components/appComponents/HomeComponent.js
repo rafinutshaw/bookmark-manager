@@ -19,13 +19,14 @@ export default function HomeComponent() {
     const modalOnClose = (data) => {
         console.log(data)
         setOpenModal(false)
-
-        AppHelper.addBookmark(data.categoryName, data.bookmark)
-        updateAllCategories()
+        if (data.result) {
+            AppHelper.addBookmark(data.data.categoryName, data.data.bookmark)
+            updateAllCategories()
+        }
     };
 
     return (
-        <div className='container '>
+        <div className={`container`}>
             <div className='text-lg font-bold pt-4'>Bookmark Manager</div>
             <div className='flex justify-end'>
                 <button type='button' className='btn btn-rounded' onClick={() => setOpenModal(true)} > Add Bookmark </button>
@@ -36,10 +37,10 @@ export default function HomeComponent() {
                 </div>
                 <BookmarkBox />
             </div>
-            <AddBookmarkModal
+            {openModal && <AddBookmarkModal
                 handleClose={(value) => modalOnClose(value)}
                 showModal={openModal}
-            />
+            />}
         </div>
     )
 }

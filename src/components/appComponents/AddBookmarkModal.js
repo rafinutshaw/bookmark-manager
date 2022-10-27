@@ -23,7 +23,7 @@ function AddBookmarkModal({
         if (createCategory || categoryList.items.length == 0) {
             data.categoryName = data.newCategoryName
         }
-        closeModal(data);
+        closeModal({ data, result: true });
     };
     const closeModal = (data) => {
         handleClose(data);

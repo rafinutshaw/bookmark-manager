@@ -1,0 +1,67 @@
+@import url('./default.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body,
+#root {
+    height: 100vh;
+    color: var(--blue-600);
+    font-size: var(--font-size) !important;
+
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.required:after {
+    content: '*';
+    font-family: monospace;
+    font-size: 1em;
+    color: var(--red);
+    font-weight: 600;
+    padding-left: 2px;
+    position: absolute;
+}
+
+
+.form-field {
+  background-color: var(--gray-100);
+  height: 3.5rem;
+  width: 100%;
+  border-radius: 0.65rem;
+  border-width: 1px;
+  padding: 1rem 1.3rem;
+  line-height: 1.25;
+  --tw-text-opacity: 1;
+  border: 1px solid var(--gray-300);
+  outline: 0px;
+}
+
+.btn {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  border-color: var(--gray-400);
+}
+.btn-rounded {
+  border-radius: 1.5rem;
+}

@@ -1,0 +1,1 @@
+export const CATEGORIES_INFO = 'categories_info'

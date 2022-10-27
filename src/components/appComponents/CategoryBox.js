@@ -9,7 +9,7 @@ export default function CategoryBox({ category }) {
                 {category.categoryName}
             </div>
             <div>
-                {category.bookmarks.map((item) => item && <BookmarkItem key={item.bookmarkUrl} categoryName={category.categoryName} bookmark={item} />)}
+                {category.bookmarks.map((item, index) => item && <BookmarkItem key={index} categoryName={category.categoryName} bookmark={item} />)}
             </div>
         </div>
     )

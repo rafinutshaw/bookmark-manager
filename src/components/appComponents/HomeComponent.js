@@ -32,7 +32,7 @@ export default function HomeComponent() {
             </div>
             <div className='flex justify-between mt-4'>
                 <div>
-                    {allCateogories.map((item) => <CategoryBox key={item.categoryName} category={item} />)}
+                    {allCateogories.map((item, index) => <CategoryBox key={index} category={item} />)}
                 </div>
                 <BookmarkBox />
             </div>

@@ -28,7 +28,7 @@ export default class AppHelper {
             this.setAllCategories([newCategory])
             return [newCategory]
         }
-        const itemIndex = allCateogories.findIndex((item) => item.categoryName == categoryName)
+        const itemIndex = allCateogories.findIndex((item) => item.categoryName === categoryName)
         if (itemIndex !== -1) {
             allCateogories[itemIndex].bookmarks.push(bookmarkInfo)
             this.setAllCategories(allCateogories)

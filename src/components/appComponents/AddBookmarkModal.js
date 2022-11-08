@@ -16,11 +16,10 @@ function AddBookmarkModal({
         formState: { errors },
     } = useForm();
     const [createCategory, setCreateCategory] = useState(false)
-    const [isReady, setIsReady] = useState(false)
     const onSubmit = (data) => {
         debugger
         console.log(data);
-        if (createCategory || categoryList.items.length == 0) {
+        if (createCategory || categoryList.items.length === 0) {
             data.categoryName = data.newCategoryName
         }
         closeModal({ data, result: true });
@@ -48,7 +47,7 @@ function AddBookmarkModal({
             <input
                 {...register(
                     'newCategoryName',
-                    (createCategory || categoryList.items.length == 0) ? validationSchema.required : {}
+                    (createCategory || categoryList.items.length === 0) ? validationSchema.required : {}
                 )}
                 className={`form-field ${errors.bookmark?.newCategoryName
                     ? 'border-red-400'
@@ -127,7 +126,7 @@ function AddBookmarkModal({
                                 <label htmlFor="category">Category</label>
                             </div>
 
-                            {categoryList.items?.length != 0 &&
+                            {categoryList.items?.length !== 0 &&
                                 <div className='w-full px-3 mb-6 md:mb-0 flex'>
                                     <div className='flex-grow mr-2'>
                                         <select
@@ -144,7 +143,7 @@ function AddBookmarkModal({
                                             ))}
                                         </select>
 
-                                        {categoryList.items?.length != 0 && errors.categoryName && (
+                                        {categoryList.items?.length !== 0 && errors.categoryName && (
                                             <p className="ml-3 text-red-500 text-xs italic">
                                                 {errors.categoryName.message}
                                             </p>
@@ -155,7 +154,7 @@ function AddBookmarkModal({
                                     </div>
                                 </div>
                             }
-                            {(createCategory || categoryList.items?.length == 0) && <div className='className="w-full px-3 mb-6 md:mb-0"'>
+                            {(createCategory || categoryList.items?.length === 0) && <div className='className="w-full px-3 mb-6 md:mb-0"'>
                                 {newCategoryUI()}
                             </div>}
                         </div>

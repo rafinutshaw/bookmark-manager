@@ -24,6 +24,11 @@ body,
 *::after {
     box-sizing: border-box;
 }
+
+.appContainer{
+  width: 700px;
+}
+
 .required:after {
     content: '*';
     font-family: monospace;

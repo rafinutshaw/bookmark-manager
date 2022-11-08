@@ -26,7 +26,7 @@ export default function HomeComponent() {
     };
 
     return (
-        <div className={`container`}>
+        <div className={`container appContainer`}>
             <div className='text-lg font-bold pt-4'>Bookmark Manager</div>
             <div className='flex justify-end'>
                 <button type='button' className='btn btn-rounded' onClick={() => setOpenModal(true)} > Add Bookmark </button>
